@@ -9,3 +9,361 @@
 
 /* Blocks */
 @import "./blocks/*.scss";
+
+.form-block__wrapper-section {
+  @include vp-1024 {
+    margin-bottom: 280px;
+  }
+  @include vp-500 {
+    margin-bottom: 470px;
+  }
+}
+.form-block__wrapper {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include vp-768 {
+    gap: 24px;
+    padding-top: 20px;
+  }
+  h1 {
+    max-width: 700px;
+  }
+  p {
+    max-width: 710px;
+    display: block;
+  }
+  .form-block {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    padding: 30px;
+    > span {
+      font-size: 20px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 20px;
+    }
+    &__button {
+      height: 58px;
+    }
+    form {
+      margin-bottom: 15px;
+    }
+    .form-block__check {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      span {
+        font-size: 12px;
+        line-height: 18px;
+        a {
+          color: #888888;
+        }
+      }
+      .checkbox {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    @include vp-1024 {
+      margin-bottom: -280px;
+    }
+    @include vp-768 {
+      padding: 24px;
+    }
+    @include vp-500 {
+      margin-bottom: -470px;
+    }
+  }
+}
+
+.plus-block {
+  &__card {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    min-height: 200px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &::before {
+      content: url(../img/icon/plus-card.svg);
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: auto;
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      span {
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 700;
+      }
+    }
+    @include vp-768 {
+      padding-left: 20px;
+      padding-bottom: 20px;
+      border-top: 20px;
+    }
+  }
+}
+
+.step-block {
+  &__card {
+    background-color: #fff9f9;
+    border: 1px solid #e8e8e8;
+    min-height: 149px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    span {
+      color: #ec5b52;
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+    .text {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    @include vp-768 {
+      padding: 20px;
+    }
+  }
+}
+
+.image-block__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  @include vp-768 {
+    gap: 50px;
+  }
+}
+.image-block-reverse {
+  flex-direction: row-reverse;
+}
+.image-block {
+  display: flex;
+  background-color: #fff;
+  .image {
+    flex: 47%;
+    display: block;
+    overflow: hidden;
+    img {
+      display: flex;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .line {
+    width: 60px;
+    height: 1px;
+    background-color: #ec5b52;
+  }
+  &__content {
+    flex: 53%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include vp-768 {
+      padding: 30px 0;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    span {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 17.4px;
+    }
+  }
+  @include vp-768 {
+    flex-direction: column;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  &__inputs {
+    display: flex;
+    gap: 10px;
+    .input {
+      max-width: 250px;
+      width: 100%;
+    }
+    .button {
+      max-width: 300px;
+      width: 100%;
+    }
+    @include vp-500 {
+      flex-direction: column;
+      .input,
+      .button {
+        max-width: 100%;
+      }
+    }
+  }
+  .form-block__check {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    span {
+      font-size: 12px;
+      line-height: 18px;
+      color: #fff;
+      a {
+        color: #888888;
+      }
+    }
+    .checkbox {
+      width: 23px;
+      height: 23px;
+    }
+  }
+}
+
+.portfolio-slider__wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    max-width: 100% !important;
+    padding: 0 38px !important;
+  }
+  @include vp-768 {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+  }
+}
+.portfolio-slider {
+  padding-bottom: 50px !important;
+  margin-bottom: -50px;
+}
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  .image {
+    transition: scale var(--time);
+  }
+  @include hover {
+    .image {
+      scale: 1.1;
+    }
+  }
+  a {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 30px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(23, 5, 23, 0.1) 53%,
+      rgba(23, 5, 23, 0.7) 82%
+    );
+    z-index: 9;
+  }
+  &__content {
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 22px;
+      color: #fff;
+    }
+    .date {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 17.4px;
+      color: #e8e8e8;
+    }
+  }
+}
+.navigation-buttons {
+  position: absolute;
+  width: calc(100% + 192px);
+  left: -70px;
+  top: calc(50% - 20px);
+  margin-left: -25px;
+  margin-right: -25px;
+  @media (max-width: 1400px) {
+    width: calc(100%);
+    left: 20px;
+  }
+  @include vp-768 {
+    margin: 0;
+    width: calc(100%);
+    left: 0;
+  }
+}
+
+.brand-slider__wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    max-width: 100% !important;
+    padding-left: 38px !important;
+  }
+  @include vp-768 {
+    padding-left: 20px !important;
+  }
+}
+.brand-nav-buttons {
+  top: 50%;
+}
+.brand-slide {
+  @include vp-500 {
+    display: flex !important;
+    justify-content: center;
+  }
+}
+
+.links_block {
+  margin-top: 30px;
+  max-width: 520px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    a {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      @include vp-768 {
+        font-size: 18px;
+      }
+    }
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #b8b8b8;
+      @include vp-768 {
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap");
+
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	background-color: var(--page-bg);
-	color: var(--text-color);
-    font-family: var(--font-main);
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  font-family: "PT Sans Caption", sans-serif !important;
 }
