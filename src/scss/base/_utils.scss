@@ -124,7 +124,9 @@ input[type="submit"] {
   display: none !important;
 }
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .color-white {
@@ -217,7 +219,7 @@ input[type="submit"] {
 }
 .new-select__list {
   position: absolute;
-  top: 52px;
+  top: 58px;
   left: 0;
   border: 1px solid #e8e8e8;
   border-top: none;
