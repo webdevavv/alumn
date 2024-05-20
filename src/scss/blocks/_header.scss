@@ -1,2 +1,132 @@
 .header {
+  &__top__wrapper {
+    background-color: #fff9f9;
+  }
+  &__top {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    .header__top-links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        color: #170517;
+        font-size: 20px;
+        font-weight: 700;
+        @include vp-768 {
+          font-size: 18px;
+        }
+      }
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #b8b8b8;
+        @include vp-768 {
+          font-size: 18px;
+        }
+      }
+      &.link {
+        a {
+          color: var(--accent);
+          transition: color var(--time);
+          @include hover {
+            color: #eb9b96;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom__wrapper {
+    border: 1px solid #e8e8e8;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      @include vp-1280 {
+        gap: 30px;
+      }
+      li {
+        a {
+          color: #170517;
+          font-size: 16px;
+          font-weight: 400;
+          transition: color var(--time);
+          @include hover {
+            color: var(--accent);
+          }
+          @include vp-1280 {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    a {
+      display: block;
+      padding: 17px 46px;
+      border-left: 1px solid #e8e8e8;
+      border-right: 1px solid #e8e8e8;
+      transition: all var(--time);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      span {
+        color: #170517;
+        font-size: 16px;
+        font-weight: 400;
+        transition: color var(--time);
+      }
+      svg {
+        path {
+          transition: all var(--time);
+        }
+      }
+      @include hover {
+        background-color: var(--accent);
+        span {
+          color: #fff;
+        }
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+      &:active {
+        background-color: #e3e3e3;
+        span {
+          color: #b5b5b5;
+        }
+        svg {
+          path {
+            fill: #b5b5b5;
+          }
+        }
+      }
+    }
+  }
+
+  @include vp-1024 {
+    display: none;
+  }
 }

@@ -1,38 +1,118 @@
-.mobile-nav {
-	position: fixed;
-	// top: 0;
-	top: -100%;
-	width: 100%;
-	height: 100%;
-    z-index: 99;
-
-	display: flex;
-    flex-direction: column;
+.core {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 189;
+  background-color: #00000080;
+  &.hide {
+    display: none;
+  }
+}
+.header-m {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  .links {
+    display: flex;
     align-items: center;
-	justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    // background: linear-gradient(209deg, #4287b3 -17.38%, #133f6b 78.4%), #276195;
-	background: rgb(130, 156, 168);
-	transition: all 0.2s ease-in;
+    gap: 25px;
+  }
+  @include vp-1024 {
+    display: flex;
+  }
 }
-
-.mobile-nav--open {
-	top: 0;
-}
-
-.mobile-nav a {
-	color: #fff;
-}
-
-.mobile-nav__list {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	row-gap: 20px;
-	font-size: 28px;
-
-	& .active {
-		opacity: 0.5;
-	}
+.burger__menu {
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  height: 100%;
+  width: 300px;
+  z-index: 200;
+  transition: transform var(--time);
+  transform-origin: center right;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  &.hide {
+    transform: scaleX(0);
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+  }
+  .header-m__nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li {
+        a {
+          color: #170517;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .header__top-links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        color: #170517;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #b8b8b8;
+        line-height: 18px;
+      }
+    }
+  }
+  &__button {
+    a {
+      display: block;
+      padding: 17px 0;
+      width: 100%;
+      border-left: 1px solid #e8e8e8;
+      border-right: 1px solid #e8e8e8;
+      transition: all var(--time);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--accent);
+      gap: 12px;
+      span {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        transition: color var(--time);
+      }
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
 }
